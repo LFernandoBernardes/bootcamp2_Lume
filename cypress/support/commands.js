@@ -14,7 +14,6 @@ Cypress.Commands.add('login', (email, password) => {
 Cypress.Commands.add('productRegistration', (name, price, description, quantity) => {
     cy.request({
         method: 'POST',
-       // url: 'https://front.serverest.dev/admin/cadastrarprodutos',
         url: 'https://serverest.dev/produtos',
         body: {
             nome: name,
@@ -24,6 +23,6 @@ Cypress.Commands.add('productRegistration', (name, price, description, quantity)
         },
         headers: {
             Authorization: window.localStorage.getItem('serverest/userToken')
-        }
+        },
     })
 })
